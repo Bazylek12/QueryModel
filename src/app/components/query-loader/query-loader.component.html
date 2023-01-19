@@ -1,0 +1,17 @@
+<ng-container *ngIf="loader$ | async as item" style="display: flex">
+  <mat-list role="list" *ngIf="item.value">
+    <mat-list-item role="listitem" *ngFor="let el of item.value">
+      {{ el }}
+    </mat-list-item>
+  </mat-list>
+  <ng-container *ngIf="item.error">
+    {{ item.error }}
+  </ng-container>
+  <mat-progress-spinner
+    *ngIf="item.isLoading"
+    [color]="'primary'"
+    [mode]="'indeterminate'"
+    [value]="50">
+  </mat-progress-spinner>
+</ng-container>
+<button mat-raised-button color="primary" (click)="refresh()">Try again</button>
