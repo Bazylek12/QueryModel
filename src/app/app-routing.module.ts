@@ -7,6 +7,7 @@ import {QueryLoaderComponent} from './components/query-loader/query-loader.compo
 import {
   QuerySingleNestedProductsComponent
 } from './components/query-single-nested-products/query-single-nested-products.component';
+import {QueryMultiNestedOrgsComponent} from './components/query-multi-nested-orgs/query-multi-nested-orgs.component';
 import {
   QueryArraySingleJobComponentModule
 } from './components/query-array-single-job/query-array-single-job.component-module';
@@ -24,6 +25,11 @@ import {
   QuerySingleNestedProductsComponentModule
 } from './components/query-single-nested-products/query-single-nested-products.component-module';
 import {ProductsServiceModule} from './services/products.service-module';
+import {
+  QueryMultiNestedOrgsComponentModule
+} from './components/query-multi-nested-orgs/query-multi-nested-orgs.component-module';
+import {OrganizationsServiceModule} from './services/organizations.service-module';
+import {UsersWithAvatarsServiceModule} from './services/users-with-avatars.service-module';
 
 @NgModule({
   imports: [RouterModule.forRoot([{
@@ -35,7 +41,10 @@ import {ProductsServiceModule} from './services/products.service-module';
   }, {path: 'loader', component: QueryLoaderComponent}, {
     path: 'nested-products',
     component: QuerySingleNestedProductsComponent
-  }]), QueryArraySingleJobComponentModule, JobPostsServiceModule, QueryStringSingleUserComponentModule, SingleUsersServiceModule, QueryStringMultiUserComponentModule, QueryLoaderComponentModule, LoaderServiceModule, QuerySingleNestedProductsComponentModule, ProductsServiceModule],
+  }, {
+    path: 'nested-orgs',
+    component: QueryMultiNestedOrgsComponent
+  }]), QueryArraySingleJobComponentModule, JobPostsServiceModule, QueryStringSingleUserComponentModule, SingleUsersServiceModule, QueryStringMultiUserComponentModule, QueryLoaderComponentModule, LoaderServiceModule, QuerySingleNestedProductsComponentModule, ProductsServiceModule, QueryMultiNestedOrgsComponentModule, OrganizationsServiceModule, UsersWithAvatarsServiceModule],
   exports: [RouterModule]
 })
 export class AppRoutingModule {

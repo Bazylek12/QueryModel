@@ -1,0 +1,23 @@
+<mat-accordion>
+  <mat-expansion-panel *ngFor="let item of organisationList$ | async">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Show {{ item.name }} teams
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-accordion>
+      <mat-expansion-panel *ngFor="let team of item.teams">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Show {{ team.name }} teams
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-list role="list">
+          <mat-list-item role="listitem" *ngFor="let avatar of team.members">
+            <img [src]="avatar.avatarUrl" style="width: 60px">
+          </mat-list-item>
+        </mat-list>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </mat-expansion-panel>
+</mat-accordion>
