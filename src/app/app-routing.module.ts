@@ -9,6 +9,9 @@ import {
 } from './components/query-single-nested-products/query-single-nested-products.component';
 import {QueryMultiNestedOrgsComponent} from './components/query-multi-nested-orgs/query-multi-nested-orgs.component';
 import {
+  QuerySingleProdWithCatComponent
+} from './components/query-single-prod-with-cat/query-single-prod-with-cat.component';
+import {
   QueryArraySingleJobComponentModule
 } from './components/query-array-single-job/query-array-single-job.component-module';
 import {JobPostsServiceModule} from './services/job-posts.service-module';
@@ -30,6 +33,10 @@ import {
 } from './components/query-multi-nested-orgs/query-multi-nested-orgs.component-module';
 import {OrganizationsServiceModule} from './services/organizations.service-module';
 import {UsersWithAvatarsServiceModule} from './services/users-with-avatars.service-module';
+import {
+  QuerySingleProdWithCatComponentModule
+} from './components/query-single-prod-with-cat/query-single-prod-with-cat.component-module';
+import {ProductsWithCategoryServiceModule} from './services/products-with-category.service-module';
 
 @NgModule({
   imports: [RouterModule.forRoot([{
@@ -41,10 +48,10 @@ import {UsersWithAvatarsServiceModule} from './services/users-with-avatars.servi
   }, {path: 'loader', component: QueryLoaderComponent}, {
     path: 'nested-products',
     component: QuerySingleNestedProductsComponent
-  }, {
-    path: 'nested-orgs',
-    component: QueryMultiNestedOrgsComponent
-  }]), QueryArraySingleJobComponentModule, JobPostsServiceModule, QueryStringSingleUserComponentModule, SingleUsersServiceModule, QueryStringMultiUserComponentModule, QueryLoaderComponentModule, LoaderServiceModule, QuerySingleNestedProductsComponentModule, ProductsServiceModule, QueryMultiNestedOrgsComponentModule, OrganizationsServiceModule, UsersWithAvatarsServiceModule],
+  }, {path: 'nested-orgs', component: QueryMultiNestedOrgsComponent}, {
+    path: 'single-products',
+    component: QuerySingleProdWithCatComponent
+  }]), QueryArraySingleJobComponentModule, JobPostsServiceModule, QueryStringSingleUserComponentModule, SingleUsersServiceModule, QueryStringMultiUserComponentModule, QueryLoaderComponentModule, LoaderServiceModule, QuerySingleNestedProductsComponentModule, ProductsServiceModule, QueryMultiNestedOrgsComponentModule, OrganizationsServiceModule, UsersWithAvatarsServiceModule, QuerySingleProdWithCatComponentModule, ProductsWithCategoryServiceModule],
   exports: [RouterModule]
 })
 export class AppRoutingModule {
